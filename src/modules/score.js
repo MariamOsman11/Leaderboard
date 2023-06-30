@@ -16,7 +16,7 @@ const addNewScore = async () => {
       listToDisplay.innerHTML = `
          <span class="name-list">${value.user}: </span>
          <span class="name-number">${value.score}</span>
-         
+       
          `;
       listScore.appendChild(listToDisplay);
     });
