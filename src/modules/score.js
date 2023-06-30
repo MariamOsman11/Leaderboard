@@ -1,46 +1,29 @@
-const listScore = document.querySelector('.listNameAndScore');
+import listScore from './domVariable.js';
+import { baseUrl, gameId } from './getApi.js';
 
-const recentScore = [
-  {
-    name: 'Binyam',
-    number: 100,
-  },
-  {
-    name: 'Tegene',
-    number: 80,
+const addNewScore = async () => {
+  try {
+    const response = await fetch(`${baseUrl}games/${gameId}/scores/`);
+    const data = await response.json();
 
-  },
-  {
-    name: 'Osman',
-    number: 90,
-  },
-  {
-    name: 'Mariam',
-    number: 70,
-
-  },
-  {
-    name: 'John',
-    number: 70,
-
-  },
-  {
-    name: 'Hannah',
-    number: 70,
-
-  }];
-const displayContent = () => {
-  recentScore.forEach((value) => {
-    const listToDisplay = document.createElement('li');
-    listToDisplay.className = 'listScore';
-    listToDisplay.id = value.id;
-    listToDisplay.innerHTML = `
-         <span class="name-list">${value.name}: </span>
-         <span class="name-number">${value.number}</span>
+    listScore.innerHTML = '';
+    let count = 1;
+    data.result.forEach((value) => {
+      const listToDisplay = document.createElement('li');
+      listToDisplay.className = 'listScore';
+      listToDisplay.id = count;
+      count += 1;
+      listToDisplay.innerHTML = `
+         <span class="name-list">${value.user}: </span>
+         <span class="name-number">${value.score}</span>
          
          `;
-    listScore.appendChild(listToDisplay);
-  });
+      listScore.appendChild(listToDisplay);
+    });
+    return 'Recieved all scores';
+  } catch (error) {
+    return `Error fetching scores: ${error}`;
+  }
 };
 
-export default displayContent;
+export default addNewScore;
