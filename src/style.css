@@ -1,10 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url(https://cdn.wallpapersafari.com/83/57/nxQbvE.jpg);
- background-image: cover;
- background-repeat: no-repeat;
- 
+  background-image: url(./modules/images/backgr.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -12,14 +11,13 @@ h1 {
   margin-left: 40%;
   font-size: 3rem;
   color: yellow;
-
 }
 
 .displayScore {
-display: flex;
-justify-content: center;
-align-items: center;
- background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
   opacity: 0.7;
   width: 76%;
   margin-left: 12%;
@@ -45,13 +43,13 @@ align-items: center;
 
 .name-list {
   padding-left: 10px;
-  
 }
 
 .listScore:nth-child(even) {
   background-color: #c1c1c1;
   width: 100%;
 }
+
 .listScore:nth-child(odd) {
   background-color: #8a8484;
   width: 100%;
