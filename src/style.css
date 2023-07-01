@@ -2,15 +2,14 @@ body {
   margin: 0;
   padding: 0;
   background-image: url(./modules/images/backgr.webp);
-  background-size: cover;
   background-repeat: no-repeat;
 }
 
 h1 {
-  margin-top: 5%;
-  margin-left: 40%;
+  margin-top: 3%;
+  margin-left: 7%;
   font-size: 3rem;
-  color: yellow;
+  color: #babd14;
 }
 
 .displayScore {
